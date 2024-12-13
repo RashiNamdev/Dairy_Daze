@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Register</title>
+    <style>
+        * { box-sizing: border-box }
+
+<<<<<<< HEAD
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+body{
+    display: flex;
+    justify-content:flex-end;
+    margin-right: 30px;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(./pic/milkonmobile.png);
+    
+    background-size:cover ;
+    background-position:center ;
+}
+
+.wrapper{
+    border-radius: 12px;
+    width: 450px;
+    margin-right: 4%;
+    background: transparent  ;
+    border: 4px solid rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    padding: 3px 10px 10px 3px;
+}
+/* Full-width input fields */
+input[type=text], input[type=number] ,input[type=password],input[type=address] {
+  width: 100%;
+  padding: 7px;
+  margin: 3px 0 14px 0;
+  display: inline-block;
+  border-radius: 5px;
+  background-color: transparent;
+  
+}
+
+input[type=text]:focus,input[type=number]:focus , input[type=password]:focus, input[type=address]:focus {
+  background-color: #ffffff;
+  outline: none;
+}
+=======
+        /* Add padding to containers */
+        .container {
+            padding: 16px;
+        }
+        body {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 30px;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url(./docs/5.3/144645232_10149559.png);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .wrapper {
+            border-radius: 12px;
+            width: 450px;
+            background: transparent;
+            border: 4px solid rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            color: #ffffff;
+            padding: 3px 10px 10px 3px;
+        }
+
+        /* Full-width input fields */
+        input[type=text], input[type=number], input[type=password] {
+            width: 100%;
+            padding: 7px;
+            margin: 3px 0 14px 0;
+            display: inline-block;
+            border-radius: 5px;
+            background-color: transparent;
+        }
+>>>>>>> refs/remotes/origin/main
+
+        input[type=text]:focus, input[type=number]:focus, input[type=password]:focus {
+            background-color: #ffffff;
+            outline: none;
+        }
+
+        /* Overwrite default styles of hr */
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 10px;
+        }
+
+        /* Set a style for the submit/register button */
+        .registerbtn {
+            background-color: #f1f3f2;
+            color: #ffffff;
+            padding: 10px 20px;
+            margin: 7px 0;
+            border-radius: 15px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        .registerbtn:hover {
+            opacity: 1;
+        }
+        button[type="submit"]:hover {
+            background-color: #58f7ff62;
+        }
+
+        /* Add a blue text color to links */
+        a {
+            color: rgb(0, 1, 2);
+        }
+
+        /* Set a grey background color and center the text of the "sign in" section */
+        .signin {
+            padding: 0px;
+            margin-top: 0px;
+            background-color: transparent;
+            text-align: center;
+        }
+
+        /* Message container */
+        #messageContainer {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <form id="registerForm">
+            <div class="container">
+                <h1>Register (For Customer)</h1>
+                <p>Please fill in this form to create an account.</p>
+                <hr>
+
+                <label for="Full name"><b>Full Name</b></label>
+                <input type="text" placeholder="Enter Name" name="name" id="name" required>
+
+<<<<<<< HEAD
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+  
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+
+      <label for="email"><b>Phone No.</b></label>
+      <input type="number" placeholder="Enter number" name="email" id="email" required>
+  
+      
+
+      <label for="address"><b>Address/Location</b></label>
+      <input type="address" placeholder="Enter Address" name="address" id="address" required>
+      <hr>
+  
+      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+      <button type="submit"  class="registerbtn" ><a href="on site.html">Register</a></button>
+=======
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+                <label for="phone"><b>Phone No.</b></label>
+                <input type="number" placeholder="Enter number" name="phone" id="phone" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+                <label for="psw-repeat"><b>Repeat Password</b></label>
+                <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+                <hr>
+
+                <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+                <button type="submit" class="registerbtn">Register</button>
+            </div>
+
+            <div class="container signin">
+                <p>Already have an account? <a href="#">Sign in</a>.</p>
+            </div>
+        </form>
+
+        <!-- Message will be displayed here -->
+        <div id="messageContainer"></div>
+>>>>>>> refs/remotes/origin/main
+    </div>
+
+    <script>
+        // JavaScript to handle form submission and show success message
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('psw').value;
+
+            // Create the data object to send
+            const data = {
+                name: name,
+                email: email,
+                phone: phone,
+                password: password,
+            };
+
+            // Send data to backend via fetch
+            fetch('http://localhost:3000/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display the success message from the server
+                if (data.message === 'Registered successfully') {
+                    document.getElementById('messageContainer').innerHTML = `<p style="color: green;">${data.message}</p>`;
+                } else {
+                    document.getElementById('messageContainer').innerHTML = `<p style="color: red;">${data.message}</p>`;
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                document.getElementById('messageContainer').innerHTML = `<p style="color: red;">Error: Could not register customer</p>`;
+            });
+        });
+    </script>
+</body>
+</html>
