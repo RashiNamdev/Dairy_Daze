@@ -66,6 +66,7 @@
     background-color: #0056b3;
   }
   
+
 /* about us */
   .featurette {
       display: flex;
@@ -124,6 +125,8 @@
       }
     }
 
+
+    
     /* text on the images */
     .carousel-caption {
             position: absolute;
@@ -149,53 +152,72 @@
         }
 
 
-        /* getregister dropdown */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
 
-        .dropdown-button {
+
+
+ /* Button styling */
+ .dropdown-button {
+            margin-left: 5px;
             padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
             background-color: #007BFF;
             color: white;
             border: none;
-            cursor: pointer;
-            font-size: 16px;
             border-radius: 5px;
+            cursor: pointer;
         }
 
-        .dropdown-button:hover {
-            background-color: #0056b3;
+        /* Dropdown container */
+      
+        .dropdown {
+            position: relative;
+            display: inline-block;
         }
 
         /* Dropdown content */
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            border-radius: 5px;
-        }
+            left: 100%; /* Position dropdown to the side of the button */
+            top: 0;
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+            border-radius: 4px;
+           
+            min-width: 150px;
+            
+    transform: translate3d(0, 0, 100px); /* Push it forward */
+    z-index: 999; /* Ensure visibility */
+}
+        
 
-        .dropdown-content a {
-            color: black;
-            padding: 10px 15px;
+        /* Dropdown options */
+        
+          .dropdown-content a {
             text-decoration: none;
+            color: black;
+            padding: 5px;
             display: block;
-            font-size: 14px;
+            font-size: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 0px;
+            margin-bottom: 3px; /* Space between options */
         }
+        
 
         .dropdown-content a:hover {
             background-color: #f1f1f1;
         }
 
-        /* Show dropdown on hover */
-        .dropdown:hover .dropdown-content {
+        /* Show dropdown when button is clicked */
+        .dropdown.show .dropdown-content {
             display: block;
         }
+ 
+       
 
         
   </style>
@@ -203,111 +225,59 @@
 <body>
     <!-- Navigation bar -->
     <header>
-        <div class="logo">
+        <div class="logo" id="home">
             <p>DairyDaze</p>
         </div>
     
    <nav>
     
     <ul class="nav_link">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About us</a></li>
-        <li><a href="#">What we do</a></li>
-        <li><a href="#">Brief</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#About us">About us</a></li>
+        <li><a href="#What we do">What we do</a></li>
+        <li><a href="#Brief">Brief</a></li>
     </ul>
    </nav>
-   <!-- <button style="margin-bottom: 15px;"><a href="">Get Register</a></button>
-   <div class="dropdown"> -->
-    <button class="dropdown-button">Get Register</button>
-    <div class="dropdown-content">
-        <a href="./mjoinas.html">Milk Factory Owner</a>
-        <a href="./subbranch.html">Sub-Branch</a>
-        <a href="./customer.html">Customer</a>
+ 
+   <div class="dropdown">
+        <button class="dropdown-button" onclick="toggleDropdown()">Get Register</button>
+        <div class="dropdown-content">
+            <a href="Sub_branchdetail.html">Sub Branch</a>
+            <a href="mregisterforcustomer.html">Customer</a>
+        </div>
     </div>
+
+   
+    
 
 
 </header>
 
-<!-- ImageSlider 
- <div class="slide-container">
-    <div class="slide fade">
-        <img src="https://images.squarespace-cdn.com/content/v1/5686949025981d3d912246a3/1596232658365-E4VDP7N1P1EDXQDS517C/milk-containers.jpg" alt="slide1" style="width:100%  height=50%;">
-        <div class="text-overlay">text for slide 1</div>
-    </div>
-    <div class="slide fade">
-        <img src="https://i.ytimg.com/vi/_wdWeIzMhyA/maxresdefault.jpg" alt="slide1" style="width:100%  height=50%;">
-        <div class="text-overlay">text for slide 1</div>
-    </div>
-    <div class="slide fade">
-        <img src="https://images.squarespace-cdn.com/content/v1/5686949025981d3d912246a3/1596232658365-E4VDP7N1P1EDXQDS517C/milk-containers.jpg" alt="slide1" style="width:100%  height=50%;">
-        <div class="text-overlay">text for slide 1</div>
-    </div>
-    <div class="slide fade">
-        <img src="https://i.pinimg.com/originals/e5/df/f3/e5dff37711b03c22b4b57e89d5577760.png" alt="slide1" style="width:100%  height=50%;">
-        <div class="text-overlay">text for slide 1</div>
-    </div>
-    <div class="slide fade">
-        <img src="https://i.ytimg.com/vi/_wdWeIzMhyA/maxresdefault.jpg" alt="slide1" style="width:100%  height=50%;">
-        <div class="text-overlay">text for slide 1</div>
-    </div>
-
-    <a href="#" class="prev" onclick="changeSlide(-1)">&#10094</a>
-    <a href="#" class="next" onclick="changeSlide(-1)">&#10095</a>
-</div>
-<div class="dots-container">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-</div> -->
+<!-- ImageSlider -->
  
-<!-- Image slider -->
+  
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-<<<<<<< HEAD
       <img src="./pic/milkpic.png" class="d-block w-100" alt="...">
       <div class="carousel-caption">
-        <h1></h1>
-        
-        <p class="large">Connecting Farms to Homes – The Freshest Dairy Delivered to You</p> 
-=======
-      <img src="./docs/5.3/Image-4.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption">
         <h1>Connecting Farms to Homes – The Freshest Dairy Delivered to You</h1>
->>>>>>> refs/remotes/origin/main
         <p>Dairy Daze is your trusted platform for seamless milk supply management, connecting dairy farms directly to homes. Our system ensures that you receive the freshest, high-quality milk right at your doorstep, with easy tracking, reliable deliveries, and transparent management. Join us in revolutionizing the way dairy is distributed – efficient, dependable, and always fresh!</p>
     </div>
       
     </div>
     <div class="carousel-item">
-<<<<<<< HEAD
       <img src="./pic/milkbasket.png" class="d-block w-100" alt="...">
       <div class="carousel-caption">
-        <p class="large"></p> 
-        
-        
+        <!-- <h1>From Farm to Table – Fresh Milk, Delivered Daily.</h1>
+        <p>Dairy Daze connects dairy farms to homes, ensuring fresh, high-quality milk delivered directly to your doorstep. Experience reliable, efficient, and transparent milk supply management every day.</p> -->
     </div>
     </div>
     <div class="carousel-item">
-      <img src="./pic/newdrop.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption">
-        <h1>From Farm to Table – Fresh Milk, Delivered Daily</h1>
-        <p>Dairy Daze connects dairy farms to homes, ensuring fresh, high-quality milk delivered directly to your doorstep. Experience reliable, efficient, and transparent milk supply management every day.</p>
- 
-=======
-      <img src="./docs/5.3/Image-3.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption">
-        <h1>From Farm to Table – Fresh Milk, Delivered Daily.</h1>
-        <p>Dairy Daze connects dairy farms to homes, ensuring fresh, high-quality milk delivered directly to your doorstep. Experience reliable, efficient, and transparent milk supply management every day.</p>
-    </div>
-    </div>
-    <div class="carousel-item">
-      <img src="./docs/5.3/Image-2.jpg" class="d-block w-100" alt="...">
+      <img src="./pic/milk-cow.jpeg" class="d-block w-100" alt="...">
       <div class="carousel-caption">
         <h1>Your Trusted Dairy Partner – Ensuring Freshness, Every Day.</h1>
         <p>Dairy Daze connects dairy farms to homes, ensuring fresh, high-quality milk delivered directly to your doorstep. Experience reliable, efficient, and transparent milk supply management every day.</p>
->>>>>>> refs/remotes/origin/main
     </div>
     </div>
   </div>
@@ -321,25 +291,11 @@
   </button>
 </div>
 
- <!-- <div class="container-marketing"> 
-     <div class="slide-container"> 
-        <a href="#" class="prev" onclick="changeSlide(-1)">&#10094</a>
-        <a href="#" class="next" onclick="changeSlide(-1)">&#10095</a>
-    </div>
-    <div class="dots-container">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-    </div>
-  </div> -->
-
-<<<<<<< HEAD
+ 
   
     
-=======
   <!-- Three columns of text below the carousel -->                                                      
-<div class="container2"> 
+<!-- <div class="container2"> 
   <div class="column1">
       <div class="circle" style="background-image: url('./docs/5.3/images.jpg');"></div>
       <h2 class="heading3">Fresh Milk Delivery</h2>
@@ -360,8 +316,8 @@
       <p class="content2">We are committed to sustainability by working with local farms and promoting eco-friendly packaging. Join us in supporting a greener future while enjoying premium dairy products.</p>
       <a href="#" class="btn3">Read About Our Practices »</a>
   </div>
-</div>
->>>>>>> refs/remotes/origin/main
+</div> -->
+
 
 
     <!-- about us-->
@@ -378,7 +334,7 @@
       
           <!-- about us-->
           <hr class="styled-line">
-        <div class="heading12">
+        <div class="heading12" id="About us">
             <h1>About us</h1>
             
         </div>
@@ -399,14 +355,14 @@
 
         <!-- what we do -->
         <hr class="styled-line">
-        <div class="heading12">
+        <div class="heading12" id="What we do">
           <h1>What we do</h1>
           
       </div>
       <div class="container12">
           <section class="about1">
               <div class="about-image">
-                  <img src="./pic/milk-cow.jpeg" alt="">
+                  <img src="./pic/milk_sustainability-dairy-agriculture-card-teaser.jpg" alt="">
               </div>
               <div class="about-content">
                  

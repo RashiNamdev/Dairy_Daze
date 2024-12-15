@@ -132,3 +132,18 @@ function slideIndicator(toIndex) {
    dotActive.classList.remove("carousel_dot__active");
    newDotActive.classList.add("carousel_dot__active");
 }
+
+
+ // drop down register Toggle dropdown visibility
+ function toggleDropdown() {
+   const dropdown = document.querySelector('.dropdown');
+   dropdown.classList.toggle('show');
+}
+
+// drop down register Close the dropdown if clicked outside
+window.addEventListener('click', function (e) {
+   const dropdown = document.querySelector('.dropdown');
+   if (!dropdown.contains(e.target)) {
+       dropdown.classList.remove('show');
+   }
+});

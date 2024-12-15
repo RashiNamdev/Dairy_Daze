@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Sign In</title>
+    <link rel="stylesheet" href="adminsignup.css">
+   
+</head>
+<body>
+    <div class="signin-container">
+        <h1>DairyDaze</h1>
+        <h2>Admin Sign In</h2>
+        <form action="/admin-dashboard" method="POST">
+            <div class="form-group">
+                <label for="admin-id">Admin ID</label>
+                <input type="text" id="admin-id" name="admin-id" placeholder="Enter your Admin ID" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+            </div>
+            <div class="form-group">
+                <label for="unique-code">Unique Code</label>
+                <input type="text" id="unique-code" name="unique-code" placeholder="Enter your Unique Code" required>
+            </div>
+            <button type="submit" class="signin-button">Sign In</button>
+        </form>
+    </div>
+</body>
+</html>
