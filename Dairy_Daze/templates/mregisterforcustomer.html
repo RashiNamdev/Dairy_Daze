@@ -151,7 +151,19 @@ input[type=text]:focus,input[type=number]:focus , input[type=password]:focus, in
 
                 
                 <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" id="email" required>
+                <input type="email" placeholder="Enter Email" name="email" id="email" required>
+
+
+                <div id="otpSection" style="display: none;">
+                    <label for="otp"><b>Enter OTP</b></label>
+                    <input type="text" placeholder="Enter OTP" id="otp" required>
+                    <button type="button" id="verifyOtpBtn">Verify OTP</button>
+                </div>
+                <button type="button" id="sendOtpBtn">Send OTP</button>
+                <button type="submit" id="registerBtn" style="display: none;">Register</button>
+                <div id="messageContainer"></div>
+
+
 
                 <label for="phone"><b>Phone No.</b></label>
                 <input type="number" placeholder="Enter number" name="phone" id="phone" required>
@@ -195,7 +207,13 @@ input[type=text]:focus,input[type=number]:focus , input[type=password]:focus, in
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
             const password = document.getElementById('psw').value;
+                // Ensure OTP is verified before allowing registration
+            if (document.getElementById('registerBtn').disabled) {
+                alert("Please verify OTP before registering.");
+            return;
+             }
 
+            
             // Create the data object to send
             const data = {
                 name: name,
@@ -205,7 +223,7 @@ input[type=text]:focus,input[type=number]:focus , input[type=password]:focus, in
             };
 
             // Send data to backend via fetch
-            fetch('http://localhost:3000/register', {
+            fetch('http://127.0.0.1:8000/auth/register/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -229,3 +247,116 @@ input[type=text]:focus,input[type=number]:focus , input[type=password]:focus, in
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+<script>
+  /*  document.getElementById('registerForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+    
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const password = document.getElementById('psw').value;
+    
+        // Send registration data to backend
+        fetch('http://localhost:3000/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, phone, password })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message === 'OTP sent') {
+                // Hide registration form & show OTP section
+                document.getElementById('registerForm').style.display = 'none';
+                document.getElementById('otpSection').style.display = 'block';
+            } else {
+                document.getElementById('messageContainer').innerHTML = `<p style="color: red;">${data.message}</p>`;
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    });
+    
+    // OTP Verification
+    document.getElementById('verifyOtpBtn').addEventListener('click', function() {
+        const otp = document.getElementById('otp').value;
+    
+        fetch('http://localhost:3000/verify-otp', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ otp })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message === 'OTP verified') {
+                document.getElementById('otpMessage').style.color = 'green';
+                document.getElementById('otpMessage').innerText = 'Registration Successful!';
+                // Redirect after successful registration (optional)
+                setTimeout(() => window.location.href = 'customerlogin.html', 2000);
+            } else {
+                document.getElementById('otpMessage').innerText = 'Invalid OTP. Try again.';
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }); */
+    </script> 
+    
+
+
+
+    <script>
+        document.getElementById('sendOtpBtn').addEventListener('click', function() {
+            const email = document.getElementById('email').value;
+            if (!email) {
+                alert("Please enter your email!");
+                return;
+            }
+    
+            fetch('http://127.0.0.1:8000/auth/send-otp/', { // Django backend API
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert("OTP sent successfully!");
+                } else {
+                    alert("Error: " + data.message);
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        });
+    
+        document.getElementById('verifyOtpBtn').addEventListener('click', function() {
+            const email = document.getElementById('email').value;
+            const otp = document.getElementById('otp').value;
+            if (!otp) {
+                alert("Please enter the OTP!");
+                return;
+            }
+    
+            fetch('http://127.0.0.1:8000/auth/verify-otp/', { // Django backend API
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email, otp: otp })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert("OTP Verified! You can now register.");
+                    document.getElementById('registerBtn').style.display = "block"; 
+                    document.getElementById('registerBtn').disabled = false; // Enable Register Button
+                } else {
+                    alert("Invalid OTP, please try again.");
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        });
+    </script>
+    
