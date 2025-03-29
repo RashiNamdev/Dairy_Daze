@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pravarsha Dairy</title>
+    <link rel="stylesheet" href="product.css"> <!-- Link to External CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h2>DairyDaze</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+        <div class="icons">
+            <a href="user.html"><img src="../pic/icons8-search-30.png" alt="Search"></a>
+            <a href="user.html"> <img src="../pic/icons8-cart-30.png" alt="Cart"></a>
+            <a href="user.html"> <img src="../pic/icons8-user-30.png" alt="User"></a>
+        </div>
+    </nav>
+
+    <!-- Category Filters -->
+    <div class="category-filters">
+        <button class="filter active" data-category="all">All</button>
+        <button class="filter" data-category="milk">Milk</button>
+        <button class="filter" data-category="ghee">Ghee</button>
+        <button class="filter" data-category="paneer">Paneer</button>
+        <button class="filter" data-category="curd">Curd</button>
+        <button class="filter" data-category="buttermilk">Buttermilk</button>
+        <button class="filter" data-category="combo">Combo Products</button>
+    </div>
+
+    <!-- Product Display Section -->
+    <div class="product-container">
+        
+        <!-- Milk Products -->
+        <div class="product-card" data-category="milk">
+            <img src="images/milk.png" alt="Milk">
+            <h3>Farm Fresh Cow Milk</h3>
+            <p>₹37 / 500ml</p>
+            <a href="instock.html" class="stock-btn">In Stock</a>
+        </div>
+
+        <div class="product-card" data-category="milk">
+            <img src="images/milk.png" alt="Milk">
+            <h3>Buffalo Toned Milk</h3>
+            <p>₹35 / 500ml</p>
+            <a href="instock.html" class="stock-btn">In Stock</a>
+        </div>
+
+        <!-- Ghee Product -->
+        <div class="product-card" data-category="ghee">
+            <img src="images/ghee.png" alt="Ghee">
+            <h3>Pure Desi Ghee</h3>
+            <p>₹400 / 500ml</p>
+            <a href="instock.html" class="stock-btn">In Stock</a>
+        </div>
+
+        <!-- Paneer Product -->
+        <div class="product-card" data-category="paneer">
+            <img src="images/paneer.png" alt="Paneer">
+            <h3>Fresh Paneer</h3>
+            <p>₹70 / 200g</p>
+            <a href="instock.html" class="stock-btn">In Stock</a>
+        </div>
+
+        <!-- Curd Product -->
+        <div class="product-card" data-category="curd">
+            <img src="images/curd.png" alt="Curd">
+            <h3>Thick & Creamy Curd</h3>
+            <p>₹28 / 500ml</p>
+            <a href="instock.html" class="stock-btn">In Stock</a>
+        </div>
+
+        <!-- Buttermilk Product -->
+        <div class="product-card" data-category="buttermilk">
+            <img src="images/buttermilk.png" alt="Buttermilk">
+            <h3>Refreshing Buttermilk</h3>
+            <p>₹20 / 500ml</p>
+            <a href="instock.html" class="stock-btn">In Stock</a>
+        </div>
+
+        <!-- Combo Product -->
+        <div class="product-card" data-category="combo">
+            <img src="images/combo.png" alt="Combo">
+            <h3>Dairy Combo Pack</h3>
+            <p>₹299</p>
+            <a href="instock.html" class="stock-btn">In Stock</a>
+        </div>
+
+    </div>
+
+    <script src="product.js"></script>
+
+<!-- </body>
+</html>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const filterButtons = document.querySelectorAll(".filter");
+        
+            filterButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    if (this.getAttribute("data-category") === "all") {
+                        filterButtons.forEach(btn => btn.classList.remove("active"));
+                        this.classList.add("active");
+                    } else {
+                        this.classList.toggle("active");
+        
+                        // Remove 'All' selection when any other filter is chosen
+                        document.querySelector("[data-category='all']").classList.remove("active");
+                    }
+                });
+            });
+        });
+    </script> -->
+</body>
+</html>
+   

@@ -1,0 +1,154 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    
+}
+.nav-links a:hover {
+    color: #007bff;
+}
+
+.icons {
+    display: flex;
+    gap: 20px; /* Adds spacing between the icons */
+    align-items: center;
+}
+
+.icons a img {
+    width: 30px; /* Adjust size as needed */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.icons a img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.icons {
+    display: flex;
+    gap: 25px; /* Increased spacing between icons */
+    align-items: center;
+}
+
+.icons a img {
+    width: 35px; /* Slightly larger icons */
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.icons a img:hover {
+    transform: scale(1.15); /* Slightly larger zoom effect on hover */
+    opacity: 0.8; /* Adds a subtle fade effect */
+}
+
+.category-filters {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.filter {
+    padding: 10px 20px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.filter.active {
+    background-color: #61b846;
+    color: white;
+    border-color: #61b846;
+}
+
+.product-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card img {
+    width: 100px;
+    height: auto;
+}
+
+.product-card h3 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.product-card .stock {
+    color: green;
+    font-weight: bold;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}
+
+/* "In Stock" Button Styling */
+.stock-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: green;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: 0.3s ease;
+}
+
+.stock-btn:hover {
+    background-color: #0ef801;
+}
